@@ -1,7 +1,7 @@
 # language: en
 Feature: Test Feature
 
-  #I am a comment
+  #No need to define keywords and all step file methods will be appended with 'Given'
   Scenario: testing cucumber
     * I have money in account
     * I have invalid card with me

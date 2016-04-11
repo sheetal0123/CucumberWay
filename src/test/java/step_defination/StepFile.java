@@ -15,7 +15,7 @@ public class StepFile {
 
 	@Given("^yahoo is up and running$")
 	public void yahoo_is_up_and_running() {
-		// code
+		System.out.println("Yahoo is up...");
 	}
 
 	@Given("^I am on yahoo home page$")
