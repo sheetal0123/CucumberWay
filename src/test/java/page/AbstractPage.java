@@ -94,7 +94,7 @@ public class AbstractPage {
 		return driver.findElements(byType).size();
 	}
 
-	public static String getTitleName() {
+	public static String getTitle() {
 		return driver.getTitle();
 	}
 

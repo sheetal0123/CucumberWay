@@ -11,4 +11,5 @@ Feature: Yahoo Search Results Page
     When I search for test automation
     Then I verify search result count
     And I verify total result count
+    But results should not be more than ten
     And I closed the yahoo site

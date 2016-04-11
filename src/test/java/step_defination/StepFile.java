@@ -39,6 +39,11 @@ public class StepFile {
 		YahooSearchPage.verifyResultVolume();
 	}
 
+	@Then("^results should not be more than ten$")
+	public void results_should_not_be_more_than_ten(){
+		YahooSearchPage.verifyResultsInFirstPage();
+	}
+	
 	@Then("^I closed the yahoo site$")
 	public void i_closed_the_yahoo_site() {
 		AbstractPage.closeApplication();

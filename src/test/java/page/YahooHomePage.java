@@ -13,7 +13,7 @@ public class YahooHomePage extends AbstractPage {
 		sleep(3000);
 		waitForPresenceOfElement(Constants.YAHOOHOME_TEXTBOX);
 		System.out.println();
-		System.out.println("*** Home Title:" + getTitleName());
+		System.out.println("Yahoo Home Page Title:" + getTitle());
 		enterText(Constants.YAHOOHOME_TEXTBOX, keyword);
 		clickElement(Constants.YAHOOHOME_SEARCH_BUTTON);
 	}

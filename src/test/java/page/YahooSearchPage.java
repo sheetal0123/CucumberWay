@@ -11,13 +11,19 @@ public class YahooSearchPage extends AbstractPage {
 
 	public static void verifySearchPage() {
 		sleep(2000);
-		System.out.println("*** SRP Title:" + getTitleName());
-		System.out.println("*** Count:" + getSize(Constants.YAHOOSEARCH_RESULT_COUNT));
-		Assert.assertTrue("*** Search result is not 10", getSize(Constants.YAHOOSEARCH_RESULT_COUNT) == 10);
+		String srpTitle = getTitle();
+		System.out.println("Yahoo SRP Title:" + getTitle());
+		Assert.assertTrue("User should be on SRP page", srpTitle.endsWith("Yahoo India Search Results") );
+		
 	}
 	
 	public static void verifyResultVolume(){
-		System.out.println("*** Result volume: "+getText(Constants.YAHOOSEARCH_RESULT_VOLUME));
+		System.out.println("Result volume: "+getText(Constants.YAHOOSEARCH_RESULT_VOLUME));
+	}
+	
+	public static void verifyResultsInFirstPage(){
+		int firstPageResults = getSize(Constants.YAHOOSEARCH_RESULT_COUNT);
+		Assert.assertTrue("Results are more than ten in first page", firstPageResults <= 10);
 	}
 
 }
