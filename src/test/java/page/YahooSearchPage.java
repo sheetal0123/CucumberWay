@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 
 public class YahooSearchPage extends AbstractPage {
 
-	public YahooSearchPage(WebDriver driver) {
-		super(driver);
-	}
+//	public YahooSearchPage(WebDriver driver) {
+//		super(driver);
+//	}
 
 	public static void verifySearchPage() {
 		sleep(2000);

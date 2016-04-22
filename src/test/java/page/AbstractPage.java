@@ -18,12 +18,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class AbstractPage {
 
 	protected static WebDriver driver;
-	static String baseUrl = "https://in.yahoo.com/?p=us";
+	//static String baseUrl = "https://in.yahoo.com/?p=us";
 	public static String cmdDriver;
 
-	public AbstractPage(WebDriver driver) {
-		AbstractPage.driver = driver;
-	}
+//	public AbstractPage(WebDriver driver) {
+//		AbstractPage.driver = driver;
+//	}
 
 	public static void getDriverFromCMD() {
 		cmdDriver = System.getProperty("driver");
@@ -48,18 +48,16 @@ public class AbstractPage {
 			//System.out.println("Else loop: Running with default firefox driver");
 			driver = new FirefoxDriver();
 		}
-		driver.manage().window().maximize();
+		//driver.manage().window().maximize();
 		return driver;
 	}
 
-	public static void closeApplication() {
-		driver.quit();
-	}
 
-	public static YahooHomePage navigateToApplication(WebDriver driver) {
-		driver.navigate().to(baseUrl);
-		return new YahooHomePage(driver);
-	}
+
+//	public static YahooHomePage navigateToApplication(WebDriver driver) {
+//		driver.navigate().to(baseUrl);
+//		return new YahooHomePage(driver);
+//	}
 
 	public static void sleep(int ms) {
 		try {
@@ -69,6 +67,16 @@ public class AbstractPage {
 		}
 	}
 
+	
+	public static void openUrlWithDriverInitialization(String url){
+		driver = getDriver();
+		driver.get(url);
+	}
+	
+	public static void openUrl(String url){
+		driver.get(url);
+	}
+	
 	public static void waitForPresenceOfElement(By byType) {
 		(new WebDriverWait(driver, 30)).until(ExpectedConditions.presenceOfElementLocated(byType));
 	}
@@ -97,7 +105,16 @@ public class AbstractPage {
 	public static String getTitle() {
 		return driver.getTitle();
 	}
-
+	
+	public static String getUrl() {
+		return driver.getCurrentUrl();
+	}
+	
+	
+	public static String getAttribute(By byType, String attributeName){
+		return driver.findElement(byType).getAttribute(attributeName);
+	}
+	
 	public static void uploadImageUsingJavascript(By byType, String path) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		WebElement element = driver.findElement(byType);
@@ -130,5 +147,11 @@ public class AbstractPage {
 			e.printStackTrace();
 		}
 	}
+	
+	public static void quitApplication(){
+		driver.quit();
+	}
+
+
 
 }

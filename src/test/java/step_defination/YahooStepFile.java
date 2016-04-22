@@ -1,15 +1,16 @@
 package step_defination;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 
+import cucumber.api.DataTable;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import page.AbstractPage;
-import page.YahooHomePage;
-import page.YahooSearchPage;
+import page.*;
 
-public class StepFile {
+public class YahooStepFile {
 
 	WebDriver driver;
 
@@ -20,8 +21,7 @@ public class StepFile {
 
 	@Given("^I am on yahoo home page$")
 	public void i_am_on_yahoo_home_page() {
-		driver = AbstractPage.getDriver();
-		YahooHomePage.navigateToApplication(driver);
+		YahooHomePage.openUrlWithDriverInitialization("https://in.yahoo.com/?p=us");
 	}
 
 	@When("^I search for test automation$")
@@ -36,6 +36,7 @@ public class StepFile {
 
 	@Then("^I verify total result count$")
 	public void i_verify_total_result_count() {
+		System.out.println("*********************** Count");
 		YahooSearchPage.verifyResultVolume();
 	}
 
@@ -44,9 +45,27 @@ public class StepFile {
 		YahooSearchPage.verifyResultsInFirstPage();
 	}
 	
+	
+	
+	@When("^I search for following keywords and verify result volume$")
+	public void i_search_for_following_keywords(DataTable arg1) {
+		
+	    List<List<String>> data = arg1.raw();
+	    for(int i=1; i<=3; i++){
+	    	String keywd = data.get(i).get(0);
+	    	YahooHomePage.searchForKeyword(keywd);
+	    	System.out.println(keywd);
+	    	YahooHomePage.sleep(3000);
+	    	YahooSearchPage.verifyResultVolume();
+	    	YahooHomePage.sleep(3000);
+	    	YahooHomePage.openUrl("https://in.yahoo.com/?p=us");
+	    }
+	    
+	}
+	
 	@Then("^I closed the yahoo site$")
 	public void i_closed_the_yahoo_site() {
-		AbstractPage.closeApplication();
+		AbstractPage.quitApplication();;
 	}
 
 }

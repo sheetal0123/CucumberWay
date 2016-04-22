@@ -9,11 +9,15 @@ import cucumber.api.junit.Cucumber;
 @CucumberOptions(
 		
 		features = "src/test/java/features", 
- glue = "step_definition", 
- monochrome = true, dryRun = true,
+ glue = "step_defination", 
+ monochrome = true, dryRun = false,
 		plugin = {
- "pretty",
-		"html:target/htmlreport",
+				 "pretty", "html:target/htmlreport1"
+				// "pretty","json:target/jsonreport/report.json"
+				//"pretty","json:target/jsonreport/report.json"
+				
+				
+				,
 		}
 		)
 
