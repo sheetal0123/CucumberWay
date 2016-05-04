@@ -16,7 +16,7 @@ public class YahooAmbiguousStepFile {
 		YahooHomePage.openUrlWithDriverInitialization("https://in.yahoo.com/?p=us");
 	}
 
-	@Then("^I closed the (.*?) site$")
+	//@Then("^I closed the (.*?) site$")
 	public void i_close_the_any_site() {
 		AbstractPage.quitApplication();;
 	}
