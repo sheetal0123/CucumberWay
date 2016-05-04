@@ -19,8 +19,6 @@ Feature: Tags
   @wip
   Scenario: work in progress
     Given I am running scenario wip
-    
-    
 #Taggig examples    
 #mvn test -Dcucumber.options="--tags ~@one"     all test cases excrpt @one    
 #mvn test -Dcucumber.options="--tags @one --tags @two"     AND case | only scenario 'Three' will run

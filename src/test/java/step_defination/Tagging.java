@@ -1,5 +1,6 @@
 package step_defination;
 
+import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 
@@ -24,5 +25,11 @@ public class Tagging {
 	public void i_am_running_scenario_wip() {
 		System.out.println("**** wip");
 	}
+	
+	@Given("^I am testing$")
+	public void i_am_testing() throws Throwable {
+	    throw new PendingException();
+	}
+
 	
 }
