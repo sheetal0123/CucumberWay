@@ -23,4 +23,4 @@ Feature: Tags
 #mvn test -Dcucumber.options="--tags ~@one"     all test cases excrpt @one    
 #mvn test -Dcucumber.options="--tags @one --tags @two"     AND case | only scenario 'Three' will run
 #mvn test -Dcucumber.options="--tags @one,@two"         OR case | all test case either @one or @two or both   
-#mvn test -Dcucumber.options="--tags @one,@two --tags @wip"    AND + OR | {@one AND @wip}  or  {@one AND @wip}   
+#mvn test -Dcucumber.options="--tags @one,@two --tags @wip"    AND + OR | {@one AND @wip}  or  {@two AND @wip}   

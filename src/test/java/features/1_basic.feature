@@ -22,3 +22,5 @@ Feature: Yahoo Search Results Page
     And I verify total result count
     But results should not be more than ten
     And I closed the yahoo site
+
+#    mvn test -Dcucumber.options="--tags @yahoo"

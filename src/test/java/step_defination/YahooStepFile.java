@@ -36,7 +36,7 @@ public class YahooStepFile {
 
 	@Then("^I verify total result count$")
 	public void i_verify_total_result_count() {
-		System.out.println("*********************** Count");
+		//System.out.println("*********************** Count");
 		YahooSearchPage.verifyResultVolume();
 	}
 
