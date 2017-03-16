@@ -1,4 +1,4 @@
-# language: no
+#language: no
 Egenskap: Summering
   For å unngå at firmaet går konkurs
   Må regnskapsførerere bruke en regnemaskin for å legge sammen tall

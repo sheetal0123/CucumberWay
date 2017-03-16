@@ -14,7 +14,7 @@ Feature: Yahoo Search Results Page
   #    Then I closed the yahoo site
   
   
-  Scenario: search result count
+  Scenario: search result count e
     Given yahoo is up and running
     And I am on yahoo home page
     When I search for test automation

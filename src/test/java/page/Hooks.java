@@ -24,7 +24,7 @@ public class Hooks {
 
 	@Before("@h1")
 	public void before2(){
-		System.out.println("-------- Before h1 -------");
+		System.out.println("-------- Before h1 only -------");
 	}
 
 	
