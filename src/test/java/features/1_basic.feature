@@ -12,8 +12,6 @@ Feature: Yahoo Search Results Page
   #    Then I verify total result count
   #    Then results should not be more than ten
   #    Then I closed the yahoo site
-  
-  
   Scenario: search result count e
     Given yahoo is up and running
     And I am on yahoo home page
@@ -22,5 +20,4 @@ Feature: Yahoo Search Results Page
     And I verify total result count
     But results should not be more than ten
     And I closed the yahoo site
-
 #    mvn test -Dcucumber.options="--tags @yahoo"

@@ -34,6 +34,7 @@ public class AbstractPage {
 		if (cmdDriver != null && !cmdDriver.trim().isEmpty()) {
 			if (cmdDriver.equals("firefox")) {
 				System.out.println("Running with CMD firefox driver");
+				System.setProperty("webdriver.gecko.driver", "/Users/sheetalsingh/Downloads/geckodriver");
 				driver = new FirefoxDriver();
 			} else if (cmdDriver.equals("chrome")) {
 				System.out.println("Running with CMD chrome driver");
@@ -46,6 +47,7 @@ public class AbstractPage {
 			}
 		} else {
 			//System.out.println("Else loop: Running with default firefox driver");
+			System.setProperty("webdriver.gecko.driver", "/Users/sheetalsingh/Downloads/geckodriver");
 			driver = new FirefoxDriver();
 		}
 		//driver.manage().window().maximize();
