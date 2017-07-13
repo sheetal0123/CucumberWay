@@ -15,10 +15,10 @@ public class Hooks {
 //		System.out.println("-------- Before 2 -------");
 //	}
 //	
-//	@Before
-//	public void init(){
-//		System.out.println("--------------- Before Scenario ---------------");
-//	}
+	@Before
+	public void init(){
+		System.out.println("--------------- Before Scenario ---------------");
+	}
 	
 
 
@@ -45,5 +45,5 @@ public class Hooks {
 //		System.out.println("--------------- After Scenario 1---------------\n\n\n");
 //	}
 	
-
+	
 }

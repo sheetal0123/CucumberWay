@@ -10,7 +10,7 @@ import cucumber.api.SnippetType;
 		features = "src/test/java/features", glue = "step_defination", monochrome = false, dryRun = false,
 		strict = false,
 		plugin = {
-				 "pretty", "html:target/htmlreport"
+				"pretty", "html:target/htmlreport"
 				// "pretty","json:target/jsonreport/report.json"
 				//"pretty","json:target/jsonreport/report.json"
 				,
