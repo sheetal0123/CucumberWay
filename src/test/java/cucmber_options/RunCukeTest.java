@@ -7,7 +7,11 @@ import cucumber.api.SnippetType;
 
 @RunWith(Cucumber.class)    
 @CucumberOptions(
-		features = "src/test/java/features", glue = "step_defination", monochrome = false, dryRun = false,
+		features = "src/test/java/features", 
+		glue = "step_defination", 
+		tags = "hooks",
+		monochrome = false, 
+		dryRun = false,
 		strict = false,
 		plugin = {
 				"pretty", "html:target/htmlreport"
